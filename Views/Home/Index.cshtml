@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    /* Background image style */
+    .bg-container {
+        background-image: url(""); /* Use the correct image URL */
+        background-size: cover; /* Makes sure the background image covers the entire container */
+        background-position: center; /* Centers the background image */
+        background-repeat: no-repeat; /* Prevents the background image from repeating */
+        padding: 0; /* Adds padding to the container */
+        height: auto; /* Set a height for the background */
+    }
+
+    .team-card {
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .team-card:hover {
+            transform: scale(1.05);
+        }
+
+    .carousel-inner .row {
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+
+<div class="bg-container">
+    <div class="container my-5">
+        <div class="card shadow-lg bg-primary-custom text-dark mb-5">
+            <div class="card-body">
+                <h1 class="card-title">Welcome to Our Library Management System</h1>
+                <p class="card-text lead">A comprehensive solution for managing library collections, borrowers, and more.</p>
+                <p>Our system provides an easy and efficient way to organize and track books, ensuring smooth operations in any library. Whether you're a public institution or a private book lover, our tools are built to meet your needs.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card shadow-sm mb-5 bg-secondary-custom text-dark">
+                    <div class="card-body">
+                        <h2 class="text-primary-custom">About the Application</h2>
+                        <p class="text-secondary-custom">
+                            This application simplifies library operations by managing book inventories, tracking borrowed items, and handling fines for overdue items. It’s designed with user-friendliness in mind and is powered by modern technologies like .NET Core and Entity Framework.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-container">
+            <div class="container my-5">
+                <div class="card shadow-lg bg-primary-custom text-dark ">
+                    <div class="card-body text-center">
+                        <h1 class="card-title">Meet the team</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="teamCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100 team-card shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="/Images/TammamP.JPG" alt="M. Tammam" class="rounded-circle mb-3" width="100">
+                                    <h4 class="card-title">Mohamed Tammam</h4>
+                                    <p class="card-text text-secondary-custom">Full-Stack</p>
+                                    <p>Oversee project coordination, ensuring seamless integration of all components..</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 team-card shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="/Images/ShehabP.JPG" alt="Shehab Ashraf" class="rounded-circle mb-3" width="100">
+                                    <h4 class="card-title">Shehab Ashraf</h4>
+                                    <p class="card-text text-secondary-custom">Frontend Developer</p>
+                                    <p>Create engaging user interfaces using Razor views, ensuring a responsive design.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100 team-card shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="/Images/KhaledP.JPG" alt="Khaled Ellashry" class="rounded-circle mb-3" width="100">
+                                    <h4 class="card-title">Khaled El-Ashry</h4>
+                                    <p class="card-text text-secondary-custom">DataBase</p>
+                                    <p>Design and develop the database schema, ensuring optimal structure and relationships..</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 team-card shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="/Images/MaximP.JPG" alt="Maxim Sedrak" class="rounded-circle mb-3" width="100">
+                                    <h4 class="card-title">Maxim Sedrak</h4>
+                                    <p class="card-text text-secondary-custom">BackEnd Developer</p>
+                                    <p>Develop controller logic to handle user requests and responses, Implement business rules and logic related to book management and penalties..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card h-100 team-card shadow-sm">
+                                <div class="card-body text-center">
+                                    <img src="/Images/EnjyP.JPG" alt="Enjy Boushra" class="rounded-circle mb-3" width="100">
+                                    <h4 class="card-title">Enjy Boushra</h4>
+                                    <p class="card-text text-secondary-custom">Quality Assurance</p>
+                                    <p>Conduct thorough unit and integration testing to ensure system reliability.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,33 @@
+﻿@using Library.Data.Entities
+@model Library.Data.Entities.BorrowingSystem
+
+<div class="card mt-4">
+    <div class="card-header" style="background-color:mediumseagreen !important">
+        <h2>Delete Borrowing Record</h2>
+    </div>
+    <div class="card-body">
+        <h4>Are you sure you want to delete this borrowing record?</h4>
+        <dl class="row">
+            <dt class="col-sm-2">Book Title</dt>
+            <dd class="col-sm-10">@Model.BookFk?.Title</dd> <!-- Assuming Title is in the Books entity -->
+
+            <dt class="col-sm-2">Borrowing Date</dt>
+            <dd class="col-sm-10">@Model.BorrowingDate.ToString("MM/dd/yyyy")</dd>
+
+            <dt class="col-sm-2">Return Date</dt>
+            <dd class="col-sm-10">@Model.ReturnDate?.ToString("MM/dd/yyyy") </dd>
+
+            <dt class="col-sm-2">Penalty Amount</dt>
+            <dd class="col-sm-10">@Model.Penalty</dd>
+        </dl>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,41 @@
+﻿@using Library.Data.Entities
+@model IEnumerable<Library.Data.Entities.Reviews>
+
+@{
+    ViewData["Title"] = "Reviews List";
+    var bookId = ViewData["BookId"];
+    var bookName = ViewData["BookName"]; // Retrieve the book name from ViewData
+}
+
+<h2>Reviews for Book: @bookName</h2> <!-- Show the book name instead of ID -->
+<a asp-action="Create" asp-route-bookId="@bookId" class="btn btn-success">Add Review</a>
+    
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="2" class="text-center">No reviews available.</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var review in Model)
+            {
+                <tr>
+                    <td>@review.Descrptions</td> <!-- Corrected the spelling here -->
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@review.Id" class="btn btn-warning">Edit</a> <!-- Changed 'id' to 'Id' for consistency -->
+                        <a asp-action="Delete" asp-route-id="@review.Id" class="btn btn-danger">Delete</a> <!-- Same here -->
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

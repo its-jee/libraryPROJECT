@@ -1,0 +1,19 @@
+﻿@using Library.Data.Entities;
+@model Library.Data.Entities.Reviews
+
+@{
+    ViewData["Title"] = "Edit Review";
+}
+
+<h2>Edit Review for Book ID: @ViewData["BookName"]</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="hidden" asp-for="bookId" value="@ViewData["BookId"]" />
+    <div class="form-group">
+        <label asp-for="Descrptions"></label>
+        <textarea asp-for="Descrptions" class="form-control"></textarea>
+        <span asp-validation-for="Descrptions" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

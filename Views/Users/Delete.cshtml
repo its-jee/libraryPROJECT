@@ -1,0 +1,22 @@
+﻿@model DeleteUserViewModel
+
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<h2>Delete User</h2>
+
+<div class="alert alert-warning" role="alert">
+    Are you sure you want to delete this user?
+</div>
+
+<div>
+    <h4>@Model.Email</h4>
+    <div class="form-group">
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@using Library.Data.Entities;
+@model IEnumerable<Library.Data.Entities.BorrowingSystem>
+
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title">Borrowing Record</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Book:</strong> @item.BookFk.Title</p>
+                        <p><strong>User:</strong> @item.UserFk.UserName</p>
+                        <p><strong>Borrowing Date:</strong> @item.BorrowingDate.ToString("yyyy-MM-dd")</p>
+                        <p><strong>Return Date:</strong> @item.ReturnDate?.ToString("yyyy-MM-dd")</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a asp-action="return" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Return</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="mt-4">
+        <a asp-action="Create" class="btn btn-primary">Add New Borrowing</a>
+    </div>
+</div>

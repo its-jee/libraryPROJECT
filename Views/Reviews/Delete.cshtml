@@ -1,0 +1,20 @@
+﻿@using Library.Data.Entities;
+@model Library.Data.Entities.Reviews
+
+@{
+    ViewData["Title"] = "Delete Review";
+}
+
+<h2>Delete Review for Book ID: @ViewData["BookName"]</h2>
+
+<div class="form-group">
+    <label>Review Description:</label>
+    <p>@Model.Descrptions</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="hidden" asp-for="bookId" value="@ViewData["BookId"]" />
+    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
